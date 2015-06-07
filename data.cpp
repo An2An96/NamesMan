@@ -175,3 +175,26 @@ QString NameInfo::GenerateSurname(const QString& name)
     }
     return surname;
 }
+
+/*  Функция проверки соответствии родов фамилии и имени */
+bool NameInfo::CheckKind(const QString& first, const QString& second)
+{
+    switch(first[first.size() - 1].unicode()) {
+    case 1040:  case 1071:  case 1072:  case 1103:  //  А, Я
+        switch(second[second.size() - 1].unicode())   {
+            case 1040:  case 1071:  case 1072:  case 1103:  //  А, Я
+                return true;
+            default:    //  Другое
+                return false;
+        }
+        break;
+    default:    //  Другое
+        switch(second[second.size() - 1].unicode())   {
+            case 1040:  case 1071:  case 1072:  case 1103:  //  А, Я
+                return false;
+            default:    //  Другое
+                return true;
+        }
+        break;
+    }
+}

@@ -54,6 +54,9 @@ void VerifyNames(QList<FullName>& vrec, QList<NameInfo>& info, QTextStream& log)
         {
             if(cur_vr->Surname == cur_inf->GetSurname())  {
                 find = true;
+                if(cur_inf->CheckKind(cur_vr->Name, cur_vr->Surname) == false)   {
+                    log << QString(QString::fromUtf8("Рода имени и фамилии не совпадают")) << endl;
+                }
             }
         }
         if(find == false)   {
@@ -73,6 +76,9 @@ void VerifyNames(QList<FullName>& vrec, QList<NameInfo>& info, QTextStream& log)
         {
             if(cur_vr->Fathername == cur_inf->GetFathername_m())  {
                 find = true;
+                if(cur_inf->CheckKind(cur_vr->Name, cur_vr->Fathername) == false)   {
+                    log << QString(QString::fromUtf8("Рода имени и фамилии не совпадают")) << endl;
+                }
             }
         }
         if(find == false)   {

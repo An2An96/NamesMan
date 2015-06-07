@@ -29,6 +29,7 @@ public:
     static QString GenerateFathername_m(const QString&);
     static QString GenerateFathername_f(const QString&);
     static QChar DetermineGender(const QString&source);
+    static bool CheckKind(const QString&, const QString&);
 
 private:
     static QString ChangeFormat(const QString&, const char*, int = 0);

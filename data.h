@@ -1,5 +1,4 @@
-#ifndef NAMEINFO_H
-#define NAMEINFO_H
+#pragma once
 
 #include <QString>
 
@@ -40,5 +39,3 @@ private:
             Fathername_f;
     QChar   Gender;
 };
-
-#endif // NAMEINFO_H
